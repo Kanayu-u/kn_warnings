@@ -5,7 +5,7 @@ lua54 'yes'
 name 'kn_warnings'
 author 'Kanayu_u'
 description 'On-screen warning overlays for restricted vehicles and weapons'
-version '1.0.0'
+version '1.0.1'
 
 shared_script 'config.lua'
 

@@ -1,6 +1,6 @@
 # kn_warnings
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.1-blue.svg)](CHANGELOG.md)
 [![Framework](https://img.shields.io/badge/framework-Standalone-green.svg)](#requirements)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](LICENSE)
 
@@ -60,13 +60,21 @@ thread at all** — it costs nothing.
 | Key | Default | Description |
 |---|---|---|
 | `enabled` | `true` | Enable the weapon module |
-| `weapons` | `WEAPON_BANANA` | Table keyed by weapon hash, each with a `text` field |
+| `weapons` | `WEAPON_RPG`, `WEAPON_MINIGUN` | Table keyed by weapon hash, each with a `text` field |
 
 ```lua
 Config.Weapon.weapons = {
     [`WEAPON_SMG`] = { text = 'Restricted weapon' },
 }
 ```
+
+> ⚠ **Addon weapons.** If you target a weapon added by another resource, that
+> resource must be installed — otherwise the hash never resolves and the entry is
+> **silently ignored** with no error or warning. If nothing shows up, first check
+> that you can actually equip the weapon in game.
+> **アドオン武器を対象にする場合**、その武器を提供するリソースが導入されていないと
+> ハッシュが解決されず、エラーも警告も出ないまま**無言で無視されます**。
+> 表示されないときは、まず対象の武器を実際に装備できるか確認してください。
 
 The weapon overlay's appearance (colour, position, font, animation) is defined in
 **`html/index.html`**, not in `config.lua`.
